@@ -1,15 +1,13 @@
-let express = require('express');
-let router = express.Router();
+let express = require('express')
+let router = express.Router()
+const model = require('./model.js')
 
-let dog = ["bad", "good"];
-
-router.get("/", function (request, response) {
-	response.send(dog.join(", "));
-
+router.get('/', function(request, response) {
+	response.send(model.getDogs)
 })
 
-router.get("/:index", function (request, response) {
-	response.send(dog[request.params.index]);
-})
+// router.get('/:index', function(request, response) {
+// 	response.send(dog[request.params.index])
+// })
 
-module.exports = router;
+module.exports = router
