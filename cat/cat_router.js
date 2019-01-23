@@ -3,8 +3,15 @@ const router = express.Router()
 const model = require('./model')
 
 router.get('/', (request, response) => {
+	console.log(request)
 	let cats = model.getCats()
 	response.send(cats)
+})
+
+router.post('/catPost', (req, res) => {
+	console.log(req)
+	res.status(200, { message: 'hello there you lazy person' })
+	res.send()
 })
 
 router.get('/:index', (request, response) => {

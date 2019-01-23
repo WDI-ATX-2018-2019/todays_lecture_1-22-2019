@@ -1,10 +1,13 @@
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser')
 
 const dog_router = require('./dog/dog_router.js')
 const cat_router = require('./cat/cat_router.js')
 
 let router = express.Router()
+
+app.use(bodyParse)
 app.get('/', (req, res, next) => {
 	console.log('hellop')
 	res.send('<h1 class="hello">Hello</h1>')
